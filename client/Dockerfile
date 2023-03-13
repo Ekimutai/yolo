@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci
+RUN npm install
 
 # Copy the rest of the application code to the container
 COPY . .
@@ -20,6 +20,6 @@ COPY . .
 EXPOSE 3000
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["npm", "run" , "start"]
 # docker build -t my-react-app .
 # docker run -it -p 3000:3000 my-react-app
