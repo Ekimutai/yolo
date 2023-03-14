@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:16-alpine
+FROM node:14-alpine
 
 # Set the working directory to /app
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
 # Copy the rest of the application code to the container
 COPY . .
@@ -17,7 +17,7 @@ COPY . .
 EXPOSE 5000
 
 # Start the application
-CMD [ "npm", "run", "start" ]
+CMD ["npm", "run", "start" ]
 
 # docker build -t yolo-backend .
 # docker run -it -p 5000:5000 yolo-backend
