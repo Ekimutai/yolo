@@ -1,0 +1,8 @@
+---
+- name: Set up Client and Backend app
+  hosts: local
+  become: true
+
+  roles:
+    - docker
+    - setupproject

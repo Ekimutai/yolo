@@ -1,0 +1,10 @@
+---
+- name: Clone the app repository
+  git:
+    repo: https://github.com/Ekimutai/yolo.git
+    dest: /mnt/d/Learning/Enock/ansible/yolo
+
+- name: Build and run the app container
+  command: docker-compose up -d --build
+  args:
+    chdir: /mnt/d/Learning/Enock/ansible/yolo

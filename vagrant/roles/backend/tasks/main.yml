@@ -1,0 +1,10 @@
+---
+- name: Clone the React app repository
+  git:
+    repo: https://github.com/Ekimutai/yolo.git
+    dest: /home/ubuntu/backend
+
+- name: Build and run the React app container
+  command: docker-compose up -d --build
+  args:
+    chdir: /home/ubuntu/backend    
