@@ -32,7 +32,7 @@
     - name: Clone YOLO repository
       git:
         repo: https://github.com/ekimutai/yolo.git
-        dest: /home/anisha/yolo/
+        dest: /home/ekimutai/yolo/
         clone: yes
         update: yes
     - name: Install dependencies from lockfile
@@ -86,7 +86,7 @@
       tags: app, build, deploy
       shell: npm install
       args:
-        chdir: /home/anisha/yolo/backend/
+        chdir: /home/ekimutai/yolo/backend/
     - name: Start App
       tags: app, build, deploy
       shell: npm start
